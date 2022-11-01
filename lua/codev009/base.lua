@@ -1,9 +1,13 @@
 vim.cmd("autocmd!")
 
-vim.opt.guicursor= 'i:block'
+vim.opt.guicursor = 'i:block'
 vim.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
+vim.opt.swapfile = false
+vim.opt.relativenumber = true
+vim.nobackup = true
+vim.undofile = true
 
 vim.wo.number = true
 
@@ -42,3 +46,6 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 
 -- Add asterisks in block comments
 vim.opt.formatoptions:append { 'r' }
+
+-- NvimTreeToggle Keymap
+vim.api.nvim_set_keymap('n', '<C-t>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
